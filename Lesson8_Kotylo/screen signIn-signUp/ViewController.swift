@@ -57,7 +57,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .white
         // MARK: -segmentView
         self.view.addSubview(segmentView)
         segmentView.selectedSegmentIndex = 0
@@ -351,15 +351,6 @@ class ViewController: UIViewController {
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
      }
-    
-   // @IBAction func nextScreenButtonTapped(_ sender: UIButton) {
-     //   performSegue(withIdentifier: "goToAppartmentControl", sender: self)
-    //}
-    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      //   if segue.identifier == "goToAppartmentControl" {
-        //    guard let destinationVC = segue.destination as? AppartmentViewController else { return }
-            //destinationVC.loginTextField.text = loginTextField.text
-        
     // MARK: -Action segmentValueChanged
     @IBAction func segmentValueChanged(_ sender: Any) {
         

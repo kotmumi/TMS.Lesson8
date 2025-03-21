@@ -29,6 +29,8 @@ class AppartmentViewController: UIViewController {
     private var climatControlUIimageView = UIImageView(image: UIImage(systemName: "air.conditioner.horizontal.fill"))
     private var climatControlUIslider = UISlider()
     private var climatControlValueUIlabel = UILabel()
+// MARK: -backtoFirstScreen View element
+    private var backToFirstScreenUIButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -197,6 +199,24 @@ class AppartmentViewController: UIViewController {
             make.centerY.equalTo(climatControlUIslider.snp.centerY)
             make.leading.equalTo(climatControlUIslider.snp.trailing).offset(16)
         }
+// MARK: -backToFirstScreenUIButton add
+        view.addSubview(backToFirstScreenUIButton)
+        backToFirstScreenUIButton.backgroundColor = .lightGray
+        backToFirstScreenUIButton.alpha = 0.7
+        backToFirstScreenUIButton.setTitle("<- Back to first Screen", for: .normal)
+        backToFirstScreenUIButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
+        backToFirstScreenUIButton.tintColor = .white
+        backToFirstScreenUIButton.layer.cornerRadius = 8
+        backToFirstScreenUIButton.addTarget(self,
+                                     action: #selector(goToFirstController(_:)),
+                                     for: .touchUpInside)
+        
+        backToFirstScreenUIButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().offset(-64)
+            make.trailing.equalTo(climatControlUIView.snp.trailing).offset(-32)
+            make.leading.equalTo(climatControlUIView.snp.leading).offset(32)
+            make.height.equalTo(32)
+        }
     }
     
 // MARK: -Action lightSegmentValueChanged
@@ -210,6 +230,12 @@ class AppartmentViewController: UIViewController {
            return
          }
     }
+    // MARK: -Action goToFirstController
+    @IBAction private func goToFirstController(_ sender: UIButton) {
+        let controller = ViewController()
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true, completion: nil)
+     }
 // MARK: -Action doorSegmentValueChanged
     @IBAction func doorSegmentValueChanged(_ sender: Any) {
         switch doorUIsegmentedControl.selectedSegmentIndex {
