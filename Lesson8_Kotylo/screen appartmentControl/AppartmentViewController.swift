@@ -185,6 +185,9 @@ class AppartmentViewController: UIViewController {
         climatControlUIslider.maximumValueImage = UIImage(systemName: "plus")
         climatControlUIslider.minimumValueImage = UIImage(systemName: "minus")
         climatControlUIslider.setValue(24, animated: true)
+        climatControlUIslider.addTarget(self,
+                                        action: #selector(valueChangedOfSlider(_:)),
+                                        for: .valueChanged)
         climatControlUIslider.snp.makeConstraints { make in
             make.top.equalTo(climatControlUIsegmentedControl.snp.bottom).offset(8)
             make.centerX.equalTo(climatControlUIView.snp.centerX).offset(-16)
@@ -268,5 +271,10 @@ class AppartmentViewController: UIViewController {
         default:
             return
         }
+    }
+   // MARK: -Action valueChangedOfSlider
+    @IBAction func valueChangedOfSlider(_ sender: UISlider)
+    {
+        climatControlValueUIlabel.text = "\(String(Int(climatControlUIslider.value)))°C"
     }
 }
