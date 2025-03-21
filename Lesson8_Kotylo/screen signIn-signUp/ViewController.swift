@@ -121,7 +121,7 @@ class ViewController: UIViewController {
         scrollView.contentSize = CGSize(width: 64 * 9, height: 64)
         scrollView.snp.makeConstraints { make in
             make.height.equalTo(64)
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-128)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-96)
             make.trailing.equalToSuperview().offset(-16)
             make.leading.equalToSuperview().offset(16)
         }
@@ -333,7 +333,7 @@ class ViewController: UIViewController {
                                      for: .touchUpInside)
         
         nextScreenUIButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-64)
+            make.top.equalTo(scrollView.snp.bottom).offset(32)
             make.trailing.equalTo(signUpContainerView.snp.trailing).offset(-32)
             make.leading.equalTo(signUpContainerView.snp.leading).offset(32)
             make.height.equalTo(32)

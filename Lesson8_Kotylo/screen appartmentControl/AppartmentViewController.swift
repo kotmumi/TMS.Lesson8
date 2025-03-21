@@ -258,6 +258,7 @@ class AppartmentViewController: UIViewController {
             climatControlUIslider.isHidden = false
             climatControlUIslider.isEnabled = false
             climatControlUIslider.setValue(24, animated: true)
+            climatControlValueUIlabel.text = "\(String(Int(climatControlUIslider.value)))°C"
             climatControlValueUIlabel.isHidden = false
         case 1:
             climatControlUIimageView.image = UIImage(systemName: "air.conditioner.horizontal.fill")
