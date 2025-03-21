@@ -9,19 +9,23 @@ import UIKit
 import SnapKit
 
 class AppartmentViewController: UIViewController {
+    
 // MARK: -View Background
     private var imageView = UIImageView(image: .myHome)
     private var homeUIlabel = UILabel()
+    
 // MARK: -Light View element
     private var lightUIView = UIView()
     private var lightUIlabel = UILabel()
     private var lightUIsegmentedControl = UISegmentedControl(items: ["On", "Of"])
     private var lightUIimageView = UIImageView(image: UIImage(systemName: "warninglight.fill"))
+
 // MARK: -Door View element
     private var doorUIView = UIView()
     private var doorUIlabel = UILabel()
     private var doorUIsegmentedControl = UISegmentedControl(items: ["Lock", "UnLock"])
     private var doorUIimageView = UIImageView(image: UIImage(systemName: "door.left.hand.closed"))
+    
 // MARK: -climatControl View element
     private var climatControlUIView = UIView()
     private var climatControlUIlabel = UILabel()
@@ -29,11 +33,13 @@ class AppartmentViewController: UIViewController {
     private var climatControlUIimageView = UIImageView(image: UIImage(systemName: "air.conditioner.horizontal.fill"))
     private var climatControlUIslider = UISlider()
     private var climatControlValueUIlabel = UILabel()
+    
 // MARK: -backtoFirstScreen View element
     private var backToFirstScreenUIButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 // MARK: -ImageView add
         view.addSubview(imageView)
         imageView.contentMode = .scaleAspectFill
@@ -43,6 +49,7 @@ class AppartmentViewController: UIViewController {
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
+        
 // MARK: -lightUIView add
         imageView.addSubview(lightUIView)
         lightUIView.backgroundColor = .lightGray
@@ -54,6 +61,7 @@ class AppartmentViewController: UIViewController {
             make.height.equalTo(128)
             make.width.equalTo(view.snp.width).dividedBy(2).offset(-40)
         }
+        
 // MARK: -lightUIlabel add
         lightUIView.addSubview(lightUIlabel)
         lightUIlabel.text = "Light"
@@ -64,6 +72,7 @@ class AppartmentViewController: UIViewController {
             make.centerX.equalTo(lightUIView.snp.centerX).offset(-8)
             make.top.equalTo(lightUIView.snp.top).offset(8)
         }
+        
 // MARK: -lightUIsegmentedControl add
         view.addSubview(lightUIsegmentedControl)
         lightUIsegmentedControl.selectedSegmentIndex = 0
@@ -78,12 +87,14 @@ class AppartmentViewController: UIViewController {
             make.trailing.equalTo(lightUIView.snp.trailing).offset(-8)
             make.leading.equalTo(lightUIView.snp.leading).offset(8)
         }
+        
 // MARK: -lightUIimageView add
         lightUIView.addSubview(lightUIimageView)
         lightUIimageView.snp.makeConstraints { make in
             make.trailing.equalTo(lightUIlabel.snp.trailing).offset(24)
             make.top.equalTo(lightUIlabel.snp.top)
         }
+        
 // MARK: -homeUIlabel add
         view.addSubview(homeUIlabel)
         homeUIlabel.text = "My home"
@@ -94,6 +105,7 @@ class AppartmentViewController: UIViewController {
             make.bottom.equalTo(lightUIView.snp.top).offset(-64)
             make.leading.equalTo(lightUIView.snp.leading)
         }
+        
 // MARK: -doorUIView add
         imageView.addSubview(doorUIView)
         doorUIView.backgroundColor = .lightGray
@@ -105,6 +117,7 @@ class AppartmentViewController: UIViewController {
             make.height.equalTo(128)
             make.width.equalTo(view.snp.width).dividedBy(2).offset(-40)
         }
+        
 // MARK: -doorUIlabel add
         doorUIView.addSubview(doorUIlabel)
         doorUIlabel.text = "Door"
@@ -115,6 +128,7 @@ class AppartmentViewController: UIViewController {
             make.centerX.equalTo(doorUIView.snp.centerX).offset(-8)
             make.top.equalTo(doorUIView.snp.top).offset(8)
         }
+        
 // MARK: -doorUIsegmentedControl add
         view.addSubview(doorUIsegmentedControl)
         doorUIsegmentedControl.selectedSegmentIndex = 0
@@ -129,12 +143,14 @@ class AppartmentViewController: UIViewController {
             make.trailing.equalTo(doorUIView.snp.trailing).offset(-8)
             make.leading.equalTo(doorUIView.snp.leading).offset(8)
         }
+        
 // MARK: -doorUIimageView add
         doorUIView.addSubview(doorUIimageView)
         doorUIimageView.snp.makeConstraints { make in
             make.trailing.equalTo(doorUIlabel.snp.trailing).offset(24)
             make.top.equalTo(doorUIlabel.snp.top)
         }
+        
 // MARK: -climatControlUIView add
         imageView.addSubview(climatControlUIView)
         climatControlUIView.backgroundColor = .lightGray
@@ -146,6 +162,7 @@ class AppartmentViewController: UIViewController {
             make.height.equalTo(128)
             make.width.equalTo(view.snp.width).offset(-32)
         }
+        
 // MARK: -climatControlUIlabel add
         climatControlUIView.addSubview(climatControlUIlabel)
         climatControlUIlabel.text = "Climat Control"
@@ -156,6 +173,7 @@ class AppartmentViewController: UIViewController {
             make.centerX.equalTo(climatControlUIView.snp.centerX).offset(-8)
             make.top.equalTo(climatControlUIView.snp.top).offset(8)
         }
+        
 // MARK: -climatControlUIsegmentedControl add
         view.addSubview(climatControlUIsegmentedControl)
         climatControlUIsegmentedControl.selectedSegmentIndex = 0
@@ -170,12 +188,14 @@ class AppartmentViewController: UIViewController {
             make.trailing.equalTo(climatControlUIView.snp.trailing).offset(-32)
             make.leading.equalTo(climatControlUIView.snp.leading).offset(32)
         }
+        
 // MARK: -climatControlUIimageView add
         climatControlUIView.addSubview(climatControlUIimageView)
         climatControlUIimageView.snp.makeConstraints { make in
             make.trailing.equalTo(climatControlUIlabel.snp.trailing).offset(24)
             make.top.equalTo(climatControlUIlabel.snp.top)
         }
+        
 // MARK: -climatControlUIslider add
         view.addSubview(climatControlUIslider)
         climatControlUIslider.minimumValue = 16
@@ -193,6 +213,7 @@ class AppartmentViewController: UIViewController {
             make.centerX.equalTo(climatControlUIView.snp.centerX).offset(-16)
             make.width.equalTo(climatControlUIView.snp.width).dividedBy(1.5)
         }
+        
 // MARK: -climatControlValueUIlabel add
         view.addSubview(climatControlValueUIlabel)
         climatControlValueUIlabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
@@ -202,6 +223,7 @@ class AppartmentViewController: UIViewController {
             make.centerY.equalTo(climatControlUIslider.snp.centerY)
             make.leading.equalTo(climatControlUIslider.snp.trailing).offset(16)
         }
+        
 // MARK: -backToFirstScreenUIButton add
         view.addSubview(backToFirstScreenUIButton)
         backToFirstScreenUIButton.backgroundColor = .lightGray
@@ -213,7 +235,6 @@ class AppartmentViewController: UIViewController {
         backToFirstScreenUIButton.addTarget(self,
                                      action: #selector(goToFirstController(_:)),
                                      for: .touchUpInside)
-        
         backToFirstScreenUIButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview().offset(-64)
             make.trailing.equalTo(climatControlUIView.snp.trailing).offset(-32)
@@ -233,12 +254,14 @@ class AppartmentViewController: UIViewController {
            return
          }
     }
+    
     // MARK: -Action goToFirstController
     @IBAction private func goToFirstController(_ sender: UIButton) {
         let controller = ViewController()
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
      }
+    
 // MARK: -Action doorSegmentValueChanged
     @IBAction func doorSegmentValueChanged(_ sender: Any) {
         switch doorUIsegmentedControl.selectedSegmentIndex {
@@ -250,6 +273,7 @@ class AppartmentViewController: UIViewController {
            return
          }
     }
+    
 // MARK: -Action climatControlSegmentValueChanged
     @IBAction func climatControlSegmentValueChanged(_ sender: Any) {
         switch climatControlUIsegmentedControl.selectedSegmentIndex {
@@ -258,6 +282,7 @@ class AppartmentViewController: UIViewController {
             climatControlUIslider.isHidden = false
             climatControlUIslider.isEnabled = false
             climatControlUIslider.setValue(24, animated: true)
+            climatControlValueUIlabel.text = "\(String(Int(climatControlUIslider.value)))°C"
             climatControlValueUIlabel.isHidden = false
         case 1:
             climatControlUIimageView.image = UIImage(systemName: "air.conditioner.horizontal.fill")
@@ -272,6 +297,7 @@ class AppartmentViewController: UIViewController {
             return
         }
     }
+    
    // MARK: -Action valueChangedOfSlider
     @IBAction func valueChangedOfSlider(_ sender: UISlider)
     {

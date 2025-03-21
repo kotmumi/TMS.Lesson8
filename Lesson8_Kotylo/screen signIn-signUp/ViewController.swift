@@ -10,13 +10,13 @@ import SnapKit
 
 class ViewController: UIViewController {
     
-    
     private var segmentView = UISegmentedControl(items: ["Sign in", "Sign Up"])
     private var stackView = UIStackView()
     private var scrollView = UIScrollView()
     private var containerStackView = UIView()
     private var labelUILabel = UILabel()
     private var nextScreenUIButton = UIButton(type: .system)
+    
     // MARK: -View element signIn
     private var signInContainerView = UIView()
     private var loginTextField = UITextField()
@@ -53,8 +53,6 @@ class ViewController: UIViewController {
     private var eyeThreeImageView = UIImageView(image: UIImage(systemName: "eye.slash"))
     private var emailImageView = UIImageView(image: UIImage(systemName: "envelope"))
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -70,6 +68,7 @@ class ViewController: UIViewController {
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(16)
             make.trailing.equalToSuperview().offset(-32)
         }
+        
         // MARK: -logoImageView
         view.addSubview(logoImageView)
         logoImageView.contentMode = .scaleAspectFit
@@ -79,6 +78,8 @@ class ViewController: UIViewController {
             make.trailing.equalToSuperview().offset(-16)
             make.leading.equalToSuperview().offset(16)
         }
+        
+        // MARK: -labelUILabel
         view.addSubview(labelUILabel)
         labelUILabel.textColor = .windowsText
         labelUILabel.font = .systemFont(ofSize: 8, weight: .light)
@@ -94,7 +95,6 @@ class ViewController: UIViewController {
         
         iosImageView.contentMode = .scaleAspectFit
         iosImageView.frame.size = CGSize(width: 64, height: 64)
-        
         
         oneCImageView.contentMode = .scaleAspectFit
         oneCImageView.frame.size = CGSize(width: 64, height: 64)
@@ -121,7 +121,7 @@ class ViewController: UIViewController {
         scrollView.contentSize = CGSize(width: 64 * 9, height: 64)
         scrollView.snp.makeConstraints { make in
             make.height.equalTo(64)
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-128)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-96)
             make.trailing.equalToSuperview().offset(-16)
             make.leading.equalToSuperview().offset(16)
         }
@@ -152,8 +152,8 @@ class ViewController: UIViewController {
             make.trailing.equalTo(containerStackView.snp.trailing)
             make.leading.equalTo(containerStackView.snp.leading)
             make.width.equalTo(containerStackView.snp.width)
-            
         }
+        
         // MARK: -signInContainerView
         self.view.addSubview(signInContainerView)
         // signInContainerView.backgroundColor = .accent
@@ -163,8 +163,8 @@ class ViewController: UIViewController {
             make.top.equalTo(logoImageView.snp.bottom).offset(32)
             make.leading.equalToSuperview().offset(32)
             make.trailing.equalToSuperview().offset(-32)
-            
         }
+        
         // MARK: -signInLabel
         signInContainerView.addSubview(signInLabel)
         signInLabel.text = "Sign In"
@@ -176,6 +176,7 @@ class ViewController: UIViewController {
             make.trailing.equalTo(signInContainerView.snp.trailing).offset(-32)
             make.leading.equalTo(signInContainerView.snp.leading).offset(32)
         }
+        
         // MARK: -loginTextField
         signInContainerView.addSubview(loginTextField)
         loginTextField.placeholder = "login"
@@ -188,6 +189,7 @@ class ViewController: UIViewController {
             make.trailing.equalTo(signInContainerView.snp.trailing).offset(-32)
             make.leading.equalTo(signInContainerView.snp.leading).offset(32)
         }
+        
         // MARK: -passwordTextField
         signInContainerView.addSubview(passwordTextField)
         passwordTextField.backgroundColor = .white
@@ -204,6 +206,7 @@ class ViewController: UIViewController {
             make.trailing.equalTo(signInContainerView.snp.trailing).offset(-32)
             make.leading.equalTo(signInContainerView.snp.leading).offset(32)
         }
+        
         // MARK: -signInButton
         signInContainerView.addSubview(signInButton)
         signInButton.backgroundColor = .accent
@@ -217,6 +220,7 @@ class ViewController: UIViewController {
             make.leading.equalTo(signInContainerView.snp.leading).offset(32)
             make.height.equalTo(32)
         }
+        
         // MARK: - signUpContainerView
         self.view.addSubview(signUpContainerView)
         signUpContainerView.isHidden = true
@@ -226,6 +230,7 @@ class ViewController: UIViewController {
             make.leading.equalToSuperview().offset(32)
             make.trailing.equalToSuperview().offset(-32)
         }
+        
         // MARK: -signUpLabel
         signUpContainerView.addSubview(signUpLabel)
         signUpLabel.text = "Sign Up"
@@ -237,6 +242,7 @@ class ViewController: UIViewController {
             make.trailing.equalTo(signUpContainerView.snp.trailing).offset(-32)
             make.leading.equalTo(signUpContainerView.snp.leading).offset(32)
         }
+        
         // MARK: -loginUpTextField
         signUpContainerView.addSubview(loginUpTextField)
         loginUpTextField.backgroundColor = .white
@@ -250,6 +256,7 @@ class ViewController: UIViewController {
             make.trailing.equalTo(signUpContainerView.snp.trailing).offset(-32)
             make.leading.equalTo(signUpContainerView.snp.leading).offset(32)
         }
+        
         // MARK: -emailTextField
         signUpContainerView.addSubview(emailTextField)
         emailTextField.backgroundColor = .white
@@ -263,6 +270,7 @@ class ViewController: UIViewController {
             make.trailing.equalTo(signUpContainerView.snp.trailing).offset(-32)
             make.leading.equalTo(signUpContainerView.snp.leading).offset(32)
         }
+        
         // MARK: -passwordUpTextField
         signUpContainerView.addSubview(passwordUpTextField)
         passwordUpTextField.backgroundColor = .white
@@ -279,6 +287,7 @@ class ViewController: UIViewController {
             make.trailing.equalTo(signUpContainerView.snp.trailing).offset(-32)
             make.leading.equalTo(signUpContainerView.snp.leading).offset(32)
         }
+        
         // MARK: -passwordReapetTextField
         signUpContainerView.addSubview(passwordReapeatTextField)
         passwordReapeatTextField.backgroundColor = .white
@@ -295,6 +304,7 @@ class ViewController: UIViewController {
             make.trailing.equalTo(signUpContainerView.snp.trailing).offset(-32)
             make.leading.equalTo(signUpContainerView.snp.leading).offset(32)
         }
+        
         // MARK: -signUpButton
         signUpContainerView.addSubview(signUpButton)
         signUpButton.backgroundColor = .accent
@@ -308,6 +318,7 @@ class ViewController: UIViewController {
             make.leading.equalTo(signUpContainerView.snp.leading).offset(32)
             make.height.equalTo(32)
         }
+        
         // MARK: -signUpButton
         signUpContainerView.addSubview(signUpButton)
         signUpButton.backgroundColor = .accent
@@ -321,6 +332,7 @@ class ViewController: UIViewController {
             make.leading.equalTo(signUpContainerView.snp.leading).offset(32)
             make.height.equalTo(32)
         }
+        
         // MARK: -nextScreenUIButton
         view.addSubview(nextScreenUIButton)
         nextScreenUIButton.backgroundColor = .accent
@@ -331,9 +343,8 @@ class ViewController: UIViewController {
         nextScreenUIButton.addTarget(self,
                                      action: #selector(goToSecondController(_:)),
                                      for: .touchUpInside)
-        
         nextScreenUIButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-64)
+            make.top.equalTo(scrollView.snp.bottom).offset(32)
             make.trailing.equalTo(signUpContainerView.snp.trailing).offset(-32)
             make.leading.equalTo(signUpContainerView.snp.leading).offset(32)
             make.height.equalTo(32)
@@ -344,6 +355,7 @@ class ViewController: UIViewController {
     @IBAction func textFieldEddited(_ sender: UITextField) {
         loginTextField.becomeFirstResponder()
     }
+    
     // MARK: -Action nextScreenButtonTapped
     
     @IBAction private func goToSecondController(_ sender: UIButton) {
@@ -351,6 +363,7 @@ class ViewController: UIViewController {
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
      }
+    
     // MARK: -Action segmentValueChanged
     @IBAction func segmentValueChanged(_ sender: Any) {
         
@@ -366,5 +379,9 @@ class ViewController: UIViewController {
             return
         }
     }
+}
+
+#Preview () {
+    ViewController()
 }
 
