@@ -17,10 +17,24 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <navigationItem key="navigationItem" id="oeU-qc-Hqu"/>
+                    <connections>
+                        <segue destination="nPT-fi-spR" kind="show" identifier="goToAppartmentControl" id="RXU-6R-Wcd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="4"/>
+            <point key="canvasLocation" x="1993.1297709923663" y="3.5211267605633805"/>
+        </scene>
+        <!--AppartmentControlVC-->
+        <scene sceneID="3gM-ca-hBb">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="AppartmentControlVC" storyboardName="AppartmentControl" referencedIdentifier="AppartmentControlVC" id="nPT-fi-spR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="T5o-X9-Sq9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DYE-PZ-uFb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2675.5725190839694" y="3.5211267605633805"/>
         </scene>
     </scenes>
 </document>
