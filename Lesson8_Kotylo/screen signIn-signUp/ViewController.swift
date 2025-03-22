@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SwiftUI
 
 class ViewController: UIViewController {
     
@@ -381,7 +382,7 @@ class ViewController: UIViewController {
     }
 }
 
-#Preview () {
+#Preview {
     ViewController()
 }
 

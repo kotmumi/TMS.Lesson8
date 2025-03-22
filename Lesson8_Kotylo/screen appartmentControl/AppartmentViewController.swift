@@ -17,7 +17,7 @@ class AppartmentViewController: UIViewController {
 // MARK: -Light View element
     private var lightUIView = UIView()
     private var lightUIlabel = UILabel()
-    private var lightUIsegmentedControl = UISegmentedControl(items: ["On", "Of"])
+    private var lightUIsegmentedControl = UISegmentedControl(items: ["On", "Off"])
     private var lightUIimageView = UIImageView(image: UIImage(systemName: "warninglight.fill"))
 
 // MARK: -Door View element
@@ -303,4 +303,8 @@ class AppartmentViewController: UIViewController {
     {
         climatControlValueUIlabel.text = "\(String(Int(climatControlUIslider.value)))°C"
     }
+}
+
+#Preview {
+    AppartmentViewController()
 }
