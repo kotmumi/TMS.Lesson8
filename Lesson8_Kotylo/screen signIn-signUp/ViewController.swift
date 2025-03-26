@@ -64,7 +64,6 @@ class ViewController: UIViewController {
         segmentView.addTarget(self,
                               action: #selector(segmentValueChanged(_:)),
                               for: .valueChanged)
-        
         segmentView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(16)
             make.trailing.equalToSuperview().offset(-32)
@@ -157,8 +156,6 @@ class ViewController: UIViewController {
         
         // MARK: -signInContainerView
         self.view.addSubview(signInContainerView)
-        // signInContainerView.backgroundColor = .accent
-        // signInContainerView.tintColor = .accent
         signInContainerView.layer.cornerRadius = 16
         signInContainerView.snp.makeConstraints { make in
             make.top.equalTo(logoImageView.snp.bottom).offset(32)
@@ -170,7 +167,7 @@ class ViewController: UIViewController {
         signInContainerView.addSubview(signInLabel)
         signInLabel.text = "Sign In"
         signInLabel.font = .systemFont(ofSize: 16, weight: .medium)
-        signInLabel.textColor = .black
+        signInLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         signInLabel.textAlignment = .center
         signInLabel.snp.makeConstraints { make in
             make.top.equalTo(signInContainerView.snp.top).offset(16)
@@ -373,9 +370,11 @@ class ViewController: UIViewController {
             signInContainerView.isHidden = false
             loginTextField.enablesReturnKeyAutomatically = true
             signUpContainerView.isHidden = true
+            signInContainerView.becomeFirstResponder()
         case 1:
             signInContainerView.isHidden = true
             signUpContainerView.isHidden = false
+            signUpContainerView.becomeFirstResponder()
         default:
             return
         }
