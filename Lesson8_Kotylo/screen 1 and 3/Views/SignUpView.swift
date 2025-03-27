@@ -71,7 +71,7 @@ class SignUpView: UIView {
     
     //MARK: -emailTextField
     
-    private var emailTextField: UITextField = {
+    private let emailTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "email"

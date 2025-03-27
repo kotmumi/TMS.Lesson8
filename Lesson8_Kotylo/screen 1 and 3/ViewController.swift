@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     // MARK: -segmentView
     
-    let segmentView: UISegmentedControl = {
+    private let segmentView: UISegmentedControl = {
         let segment = UISegmentedControl(items: ["Sign in", "Sign Up"])
         segment.translatesAutoresizingMaskIntoConstraints = false
         segment.selectedSegmentIndex = 0
@@ -91,14 +91,14 @@ class ViewController: UIViewController {
     
     // MARK: -Action nextScreenButtonTapped
     
-    @objc func goToSecondController(_ sender: UIButton) {
+    @objc private func goToSecondController(_ sender: UIButton) {
         let controller = AppartmentViewController()
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
     }
     
     // MARK: -Action segmentValueChanged
-    @objc func segmentValueChanged(_ sender: Any) {
+    @objc private func segmentValueChanged(_ sender: Any) {
         switch segmentView.selectedSegmentIndex {
         case 0:
             print("0")
