@@ -10,7 +10,6 @@ import UIKit
 class SignUpView: UIView {
     
     // MARK: -signUpLabel
-    
     private let signUpLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -22,7 +21,6 @@ class SignUpView: UIView {
     }()
     
     // MARK: -loginTextField
-    
     private let loginTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -36,7 +34,6 @@ class SignUpView: UIView {
     }()
     
     // MARK: -passwordTextField
-    
     private let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -53,7 +50,6 @@ class SignUpView: UIView {
     }()
     
     // MARK: -passwordConfirmTextField
-    
     private let passwordСonfirmTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -70,7 +66,6 @@ class SignUpView: UIView {
     }()
     
     //MARK: -emailTextField
-    
     private let emailTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -92,6 +87,7 @@ class SignUpView: UIView {
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
         button.tintColor = .black
         button.layer.cornerRadius = 8
+        button.frame.size.width = 150
         //button.addTarget(self,
           //                           action: #selector(goToSecondController(_:)),
             //                         for: .touchUpInside)
@@ -99,7 +95,6 @@ class SignUpView: UIView {
     }()
     
    //MARK: -init
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.layer.cornerRadius = 16
@@ -112,7 +107,6 @@ class SignUpView: UIView {
     }
     
     //MARK: -setupView
-    
     func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
         addSubview(signUpLabel)
@@ -125,7 +119,6 @@ class SignUpView: UIView {
     }
     
     //MARK: - setConstraints
-    
     func setConstraints() {
         NSLayoutConstraint.activate([
             

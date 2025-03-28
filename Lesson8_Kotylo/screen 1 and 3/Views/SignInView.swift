@@ -9,7 +9,6 @@ import UIKit
 class SignInView: UIView {
     
     // MARK: -signInLabel
-    
     private let signInLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -21,7 +20,6 @@ class SignInView: UIView {
     }()
     
     // MARK: -loginTextField
-    
     private let loginTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -35,7 +33,6 @@ class SignInView: UIView {
     }()
     
     // MARK: -passwordTextField
-    
     private let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -67,7 +64,6 @@ class SignInView: UIView {
     }()
     
    //MARK: -init
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.layer.cornerRadius = 16
@@ -80,7 +76,6 @@ class SignInView: UIView {
     }
     
     //MARK: -setupView
-    
     func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
         addSubview(signInLabel)
@@ -90,7 +85,6 @@ class SignInView: UIView {
     }
     
     //MARK: - setConstraints
-    
     func setConstraints() {
         NSLayoutConstraint.activate([
             

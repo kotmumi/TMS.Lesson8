@@ -10,20 +10,15 @@ import UIKit
 class ViewController: UIViewController {
     
     // MARK: -segmentView
-    
     private let segmentView: UISegmentedControl = {
         let segment = UISegmentedControl(items: ["Sign in", "Sign Up"])
         segment.translatesAutoresizingMaskIntoConstraints = false
         segment.selectedSegmentIndex = 0
         segment.selectedSegmentTintColor = .accent
-        segment.addTarget(self,
-                          action: #selector(segmentValueChanged(_:)),
-                          for: .valueChanged)
         return segment
     }()
     
     // MARK: -labelUILabel
-    
     private let labelUILabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -34,7 +29,6 @@ class ViewController: UIViewController {
     }()
     
     // MARK: -logoImageView
-    
     private let logoImageView: UIImageView = {
         let imageView = UIImageView(image: .TMS)
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -43,7 +37,6 @@ class ViewController: UIViewController {
     }()
     
     // MARK: -nextScreenUIButton
-    
     private let nextScreenUIButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -52,22 +45,16 @@ class ViewController: UIViewController {
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
         button.tintColor = .black
         button.layer.cornerRadius = 8
-        button.addTarget(self,
-                         action: #selector(goToSecondController(_:)),
-                         for: .touchUpInside)
         return button
     }()
     
     // MARK: -signInView
-    
     var signInView = SignInView()
     
     // MARK: -signUpView
-    
     var signUpView = SignUpView()
     
     // MARK: -scrollView
-    
     private let scrollView = ScrollView()
     
     // MARK: -viewDidLoad
@@ -77,9 +64,13 @@ class ViewController: UIViewController {
         setupViews()
         setConstraints()
     }
+    
     // MARK: -setupView
     func setupViews() {
         view.addSubview(segmentView)
+        segmentView.addTarget(self,
+                              action: #selector(segmentValueChanged(_:)),
+                              for: .valueChanged)
         view.addSubview(logoImageView)
         view.addSubview(labelUILabel)
         view.addSubview(signInView)
@@ -87,16 +78,20 @@ class ViewController: UIViewController {
         signUpView.isHidden = true
         view.addSubview(scrollView)
         view.addSubview(nextScreenUIButton)
+        nextScreenUIButton.addTarget(self,
+                                     action: #selector(goToSecondController(_:)),
+                                     for: .touchUpInside)
     }
+}
+    //MARK: -extension Action
+extension ViewController {
     
     // MARK: -Action nextScreenButtonTapped
-    
     @objc private func goToSecondController(_ sender: UIButton) {
-        let controller = AppartmentViewController()
+        let controller = SecondViewController()
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
     }
-    
     // MARK: -Action segmentValueChanged
     @objc private func segmentValueChanged(_ sender: Any) {
         switch segmentView.selectedSegmentIndex {
@@ -115,7 +110,7 @@ class ViewController: UIViewController {
     }
 }
 
-
+    // MARK: -extension Constraints
 extension ViewController {
     
     func setConstraints() {
